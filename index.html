@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Videojuegos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+
+    <div class="container-fluid p-0 bg-secondary">
+
+        <header class="text-center bg-primary text-white m-0">
+            <h1 class="pt-4 pb-4 mb-0">Tienda de Videojuegos</h1>
+        </header>
+
+        <!--NAVEGACION-->
+        <nav class="navbar navbar-expand-lg bg-dark p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Navbar</a>
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="#carousel">Consolas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#videojuegos">Videojuegos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!--CONSOLAS (CAROUSEL)-->
+            <div class="row bg-body-tertiary">
+                <div id="carousel" class="container p-5 carousel carousel-dark slide">
+                    <h2 class="text-center text-dark">Consolas Disponibles</h2>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner ">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="img/consola_Ps5.jfif" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded ">
+                                <h5 class>Playstation 5</h5>
+                                <p>La PlayStation 5 (PS5) es la consola de novena generación de Sony Interactive
+                                    Entertainment.
+                                </p>
+                                <p>Precio: $699.990 CLP </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="img/consola_Xbox.jfif" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded ">
+                                <h5>Xbox Series X</h5>
+                                <p>La Xbox Series X es la consola más potente de Microsoft.</p>
+                                <p>Precio: $679.990 CLP</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="img/consola_NintendoSwitch2.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded ">
+                                <h5>Nintendo Switch 2</h5>
+                                <p>La Nintendo Switch 2 es la consola hibrida de nintendo.</p>
+                                <p>Precio: $579.990 CLP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!--VIDEOJUEGOS (CARDS)-->
+
+            <div class="container mt-5">
+                <div class="row">
+                    <h2 class="text-center fw-bold text-white">Videojuegos</h2>
+                    <p class="text-center fw-bold text-white">Aquí verás los videojuegos</p>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-bg-dark mb-3">
+                            <img src="img/videoJuego_Minecraft.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Minecraft</h5>
+                                <p class="card-text">Minecraft</p>
+                                <p class="precio">Precio: $49.990 CLP </p>
+                                <a href="#" class="btn btn-primary btn-carrito">Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-bg-dark mb-3">
+                            <img src="img/videoJuego_Mariokart.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Mariokart</h5>
+                                <p class="card-text">MarioKart World Tour</p>
+                                <p class="precio">Precio: $59.990 CLP</p>
+                                <a href="#" class="btn btn-primary btn-carrito">Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card text-bg-dark mb-3">
+                            <img src="img/videoJuego_Eldenring.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Elden Ring</h5>
+                                <p class="card-text">Elden Ring</p>
+                                <p class="precio">Precio: $64.990 CLP</p>
+                                <a href="#" class="btn btn-primary btn-carrito">Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="container mt-5">
+            <div class="row">
+
+                <h2 class="text-center fw-bold text-white">Reseñas de Clientes</h2>
+                <div id="contenedorResenas" class="row mt-4"></div>
+
+            </div>
+        </div>
+
+        <!--FORMULARIO DE SUSCRIPCION-->
+        <section class="container mt-5 mb-5 p-5 border border-primary bg-body">
+            <h3>Suscríbete a nuestras ofertas</h3>
+            <p>Ingresa tu correo para recibir descuentos exclusivos en videojuegos.</p>
+
+            <form id="formulario">
+                <div class="form-group">
+                    <label for="email">Correo Electronico</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="Ingrese su correo electronico">
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electronico con
+                        nadie mas.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Suscribirme</button>
+            </form>
+            <div id="mensajeExito" class="text-success fw-bold mt-3 d-none">
+                ¡Gracias por suscribirte!
+            </div>
+        </section>
+
+        <!--FOOTER-->
+        <footer class="bg-primary text-white p-3 m-0 fw-bold" id="contacto">
+            <h3 class="fw-bold">Informacion de contacto</h3>
+            <p>Tienda de Videojuegos</p>
+            <p>Direccion: Avenida Siempreviva 742</p>
+            <p>Telefono: 999999999</p>
+            <p>Correo Electronico: videojuegos@tienda.com</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
