@@ -1,27 +1,36 @@
 # Tienda de Videojuegos 🎮
 
 ## Descripción
-Proyecto Frontend de una tienda de videojuegos desarrollado para la evaluación de la Semana 5. El proyecto, originalmente maquetado con **Bootstrap 5**, ahora incluye **JavaScript puro (Vanilla JS)** para añadir interactividad dinámica, manipulación del DOM y consumo de datos externos mediante la Fetch API.
+Proyecto Frontend de una tienda de videojuegos (eCommerce), desarrollado para la evaluación de la **Semana 6**. El proyecto ha evolucionado para incluir una manipulación avanzada del DOM, carrito de compras dinámico y consumo de datos mediante la Fetch API desde múltiples fuentes (locales y externas). Todo estructurado sobre un diseño responsivo utilizando Bootstrap 5.
 
-## Características Principales
-* **Manipulación del DOM e Interactividad:**
-  * **Eventos de Mouse (`mouseover` / `mouseout`):** Las imágenes de los videojuegos reaccionan al pasar el cursor, modificando su opacidad de forma dinámica.
-  * **Eventos de Clic (`click`):** Los botones de "Agregar al carrito" interceptan la acción del usuario (`preventDefault`) y muestran una alerta confirmando la acción.
-  * **Eventos de Formulario (`submit`):** Se implementó un formulario de suscripción (Newsletter) que captura el correo del usuario, previene la recarga de la página, muestra un mensaje de éxito modificando las clases de Bootstrap en tiempo real y limpia los campos tras el envío.
-* **Consumo de APIs Externas (Fetch API):**
-  * La sección de "Reseñas de Clientes" se construye automáticamente consultando una base de datos pública externa (JSONPlaceholder).
-  * Uso de **Promesas** (`.then()`, `.catch()`) para manejar la carga asíncrona de los datos y prevenir errores de red.
-  * Construcción dinámica del HTML (`createElement`, `innerHTML`, `appendChild`) inyectando las reseñas directamente al sistema de cuadrículas de Bootstrap.
-* **Diseño Responsivo (Mobile-First):** Menú colapsable, carrusel de consolas y un sistema de cuadrículas (`col-md-6`, `col-lg-4`) totalmente adaptable a cualquier dispositivo.
+## Características Principales (Semana 6)
+
+* **Maquetación y Responsividad (Bootstrap 5):**
+  * Barra de navegación (Navbar) con menús desplegables (Dropdowns) para filtrar categorías.
+  * Carrusel de imágenes funcional.
+  * Acordeones y Ventanas Modales (`Modals`) para la interfaz del Carrito de Compras.
+  * Sistema de grillas (`grid`) adaptable a dispositivos móviles.
+
+* **Manipulación Avanzada del DOM:**
+  * **Carrito de Compras Completo:** Los usuarios pueden agregar productos al carrito, calcular el total de forma automática y eliminar productos individualmente. El carrito cuenta con estado sincronizado entre un componente tipo Acordeón y un Modal de "Resumen de Compra", además de opciones para vaciar el carrito o simular un pago.
+  * Creación dinámica de elementos (`createElement`, `innerHTML`, `appendChild`) para dibujar la interfaz de la tienda de forma automatizada.
+
+* **Consumo de APIs y Datos (Fetch API):**
+  * **Base de Datos Local (`productos.json`):** El catálogo principal de videojuegos ya no es estático en el HTML. Se lee dinámicamente desde un archivo JSON local usando Fetch.
+  * **API Externa:** La sección de "Reseñas de Clientes" se conecta a un servidor de pruebas (`JSONPlaceholder`) para extraer testimonios reales.
+  * **Manejo de Errores:** En caso de fallas de conexión o archivos no encontrados, se implementaron bloques `.catch()` que muestran mensajes amigables al usuario directamente en la pantalla (`<h3 class="text-danger">...</h3>`).
+
+* **Interactividad y Eventos (JavaScript):**
+  * **Filtros por Categoría (`click`):** Un menú desplegable en el Navbar permite filtrar los juegos por consola (PS5, Xbox, Nintendo Switch).
+  * **Buscador Integrado (`submit`):** Una barra de búsqueda intercepta la acción de envío (`preventDefault`) y filtra las tarjetas de productos según el texto ingresado. Incluye notificaciones si no hay coincidencias y realiza un `scroll` suave hacia los resultados.
 
 ## Tecnologías Utilizadas
 * HTML5 Semántico
-* CSS3 (Reglas base y recortes de imágenes)
-* Bootstrap 5.3.8 (Diseño responsivo y componentes visuales)
-* **JavaScript ES6** (Lógica interactiva, Event Listeners, manipulación del DOM y Fetch API)
+* CSS3 (Personalización de hovers y visibilidad en Modals)
+* Bootstrap 5.3.8 (Diseño responsivo, Modals, Accordions, Dropdowns)
+* JavaScript ES6 (Lógica interactiva, Fetch API, Filtrado de Arrays)
+* JSON (Almacenamiento de estado local)
 
 ## Cómo ejecutar el proyecto
-1. Clona este repositorio o descarga los archivos en formato ZIP.
-2. Abre el archivo `index.html` en cualquier navegador web moderno (Google Chrome, Firefox, Edge).
-3. Asegúrate de tener conexión a internet, no solo para cargar Bootstrap, sino para que la función de *Fetch API* pueda conectarse al servidor externo y descargar las reseñas de los clientes.
-
+1. Clona este repositorio o descarga los archivos.
+2. Abre el archivo `index.html` en un navegador. 

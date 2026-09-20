@@ -1,0 +1,9 @@
+#listaCarritoModal .boton-eliminar {
+    display: none !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #0b5ed7 !important;
+
+    color: white !important;
+}

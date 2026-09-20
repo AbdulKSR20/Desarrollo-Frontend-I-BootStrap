@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Minecraft",
+        "precio": 49990,
+        "imagen": "img/videoJuego_Minecraft.jfif",
+        "consola": "PlayStation 5"
+    },
+    {
+        "id": 2,
+        "nombre": "Mariokart World Tour",
+        "precio": 59990,
+        "imagen": "img/videoJuego_Mariokart.jfif",
+        "consola": "Nintendo Switch"
+    },
+    {
+        "id": 3,
+        "nombre": "Elden Ring",
+        "precio": 64990,
+        "imagen": "img/videoJuego_Eldenring.jfif",
+        "consola": "Xbox Series X"
+    }
+]

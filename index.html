@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -40,7 +40,34 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#contacto">Contacto</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Consolas
+                            </a>
+                            <ul class="dropdown-menu bg-primary text-white">
+                                <li><a class="dropdown-item text-white filtro-consola" href="#">PlayStation 5</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-white filtro-consola" href="#">Xbox Series X</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-white filtro-consola" href="#">Nintendo Switch</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-white filtro-consola" href="#">Todas</a></li>
+                            </ul>
+                        </li>
                     </ul>
+
+                    <form class="d-flex" role="search" id="buscador">
+                        <input class="form-control me-2" type="search" id="inputBusqueda" placeholder="Buscar juego..."
+                            aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -99,75 +126,97 @@
 
             <!--VIDEOJUEGOS (CARDS)-->
 
-            <div class="container mt-5">
+            <div class="container mt-5" id="videojuegos">
                 <div class="row">
                     <h2 class="text-center fw-bold text-white">Videojuegos</h2>
                     <p class="text-center fw-bold text-white">Aquí verás los videojuegos</p>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="card text-bg-dark mb-3">
-                            <img src="img/videoJuego_Minecraft.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Minecraft</h5>
-                                <p class="card-text">Minecraft</p>
-                                <p class="precio">Precio: $49.990 CLP </p>
-                                <a href="#" class="btn btn-primary btn-carrito">Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="card text-bg-dark mb-3">
-                            <img src="img/videoJuego_Mariokart.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Mariokart</h5>
-                                <p class="card-text">MarioKart World Tour</p>
-                                <p class="precio">Precio: $59.990 CLP</p>
-                                <a href="#" class="btn btn-primary btn-carrito">Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="card text-bg-dark mb-3">
-                            <img src="img/videoJuego_Eldenring.jfif" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Elden Ring</h5>
-                                <p class="card-text">Elden Ring</p>
-                                <p class="precio">Precio: $64.990 CLP</p>
-                                <a href="#" class="btn btn-primary btn-carrito">Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+
+                    <div id="contenedorProductos" class="row"></div>
                 </div>
             </div>
         </main>
 
+        <!--CARRITO-->
         <div class="container mt-5">
-            <div class="row">
+            <div class="accordion" id="accordionCarrito">
+                <div class="accordion-item text-end">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button bg-body" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#carrito" aria-expanded="true" aria-controls="carrito">
+                            Carrito de Compras
+                        </button>
+                    </h2>
 
-                <h2 class="text-center fw-bold text-white">Reseñas de Clientes</h2>
-                <div id="contenedorResenas" class="row mt-4"></div>
+                    <div id="carrito" class="accordion-collapse collapse" data-bs-parent="#accordionCarrito">
+                        <div class="accordion-body" id="contenedorCarrito">
+                            <ul class="list-group" id="listaCarrito">
 
-            </div>
-        </div>
-
-        <!--FORMULARIO DE SUSCRIPCION-->
-        <section class="container mt-5 mb-5 p-5 border border-primary bg-body">
-            <h3>Suscríbete a nuestras ofertas</h3>
-            <p>Ingresa tu correo para recibir descuentos exclusivos en videojuegos.</p>
-
-            <form id="formulario">
-                <div class="form-group">
-                    <label for="email">Correo Electronico</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                        placeholder="Ingrese su correo electronico">
-                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electronico con
-                        nadie mas.</small>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container mt-2 mb-2">
+                        <span class="fs-5 fw-bold p-3">Total: $<span id="totalCarrito">0</span></span>
+                        <button class="btn btn-primary" id="botonVaciar">Vaciar Carrito</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra"
+                            id="botonComprar">Comprar</button>
+                        <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="modalCompraLabel">Carrito de Compras</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="list-group" id="listaCarritoModal">
+                                        </ul>
+                                        <span class="fs-5 fw-bold p-3">Total: $<span
+                                                id="totalCarritoModal">0</span></span>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary" id="botonPagar"
+                                            data-bs-dismiss="modal">Pagar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Suscribirme</button>
-            </form>
-            <div id="mensajeExito" class="text-success fw-bold mt-3 d-none">
-                ¡Gracias por suscribirte!
             </div>
-        </section>
+
+            <!--RESEÑAS DE CLIENTES-->
+            <div class="container mt-5">
+                <div class="row">
+
+                    <h2 class="text-center fw-bold text-white">Reseñas de Clientes</h2>
+                    <div id="contenedorResenas" class="row mt-4"></div>
+
+                </div>
+            </div>
+
+            <!--FORMULARIO DE SUSCRIPCION-->
+            <section class="container mt-5 mb-5 p-5 border border-primary bg-body">
+                <h3>Suscríbete a nuestras ofertas</h3>
+                <p>Ingresa tu correo para recibir descuentos exclusivos en videojuegos.</p>
+
+                <form id="formulario">
+                    <div class="form-group">
+                        <label for="email">Correo Electronico</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            placeholder="Ingrese su correo electronico">
+                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electronico con
+                            nadie mas.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Suscribirme</button>
+                </form>
+                <div id="mensajeExito" class="text-success fw-bold mt-3 d-none">
+                    ¡Gracias por suscribirte!
+                </div>
+            </section>
+        </div>
 
         <!--FOOTER-->
         <footer class="bg-primary text-white p-3 m-0 fw-bold" id="contacto">
